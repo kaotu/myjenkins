@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build container python') {
             steps {
-                sh 'docker run --name mypython  -v $(pwd):$(pwd) python:3.5.1 python $(pwd)/helloweorld.py'
+                sh 'docker run -v $(pwd):$(pwd) python:3.5.1 python $(pwd)/helloweorld.py'
                 sh 'docker rm -f mypython'
             }
         }
